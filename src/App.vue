@@ -1,32 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="navbar-fixed">
+      <nav class="deep-orange darken-1">
+        <div class="nav">
+          <div class="container">
+            <router-link to="/" class="brand-logo" style="font-size: 20px">Covid-19 Info</router-link>
+            <a href="#" data-target="on-mobile" class="sidenav-trigger">
+              <i class="fas fa-bars"></i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <router-link to="/"> <i class="fas fa-home"></i> Beranda</router-link>
+              </li>
+              <li>
+                <router-link to="/about"><i class="fas fa-info-circle"></i> Tentang Aplikasi</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-    <router-view/>
+
+    <ul class="sidenav" id="on-mobile">
+      <li>
+        <router-link to="/"> <i class="fas fa-home"></i> Home</router-link>
+      </li>
+      <li>
+        <router-link to="/about"><i class="fas fa-info-circle"></i> About</router-link>
+      </li>
+    </ul>
+    <transition name="fade" mode="out-in">
+      <keep-alive>
+        <router-view />
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Balsamiq Sans', cursive !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-#nav {
-  padding: 30px;
-}
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .1s;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
+
+<script>
+export default {
+  mounted() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  },
+};
+</script>
