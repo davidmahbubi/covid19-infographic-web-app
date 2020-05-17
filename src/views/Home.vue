@@ -3,11 +3,6 @@
     <div class="container">
       <highlight-stats class="highlight-stats"/>
       <statistic-per-country class="table-statistics-row" />
-      <div class="fixed-action-btn">
-        <a href="https://github.com/davidmahbubi/covid19" class="btn-floating btn-large waves-effect waves-light red fixed-action-btn" target="blank">
-          <i class="large material-icons">favorite</i>
-        </a>
-      </div>
     </div>
   </div>
 </template>
@@ -22,10 +17,6 @@ export default {
   components: {
     HighlightStats,
     StatisticPerCountry
-  },
-  mounted() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems);
   },
   methods: {
     changeLoc(e) {

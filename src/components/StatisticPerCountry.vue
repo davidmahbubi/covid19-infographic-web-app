@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col12">
             <h5>Statistik per Negara</h5>
-            <div class="row" style="margin-top: 25px; margin-bottom: 0">
+            <div class="row sort-form-row">
                 <div class="input-field col s12">
                     <select name="" v-model="sortBy">
                         <option value="confirmed">Kasus</option>
@@ -14,7 +14,7 @@
             </div>
             <div class="row" v-if="countriesListCases.length > 0">
               <div class="col12">
-                <table class="highlight" style="margin-bottom: 20px;">
+                <table class="highlight">
                   <thead>
                     <tr>
                         <th>#</th>
@@ -93,3 +93,16 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+
+.sort-form-row {
+  margin-top: 25px;
+  margin-bottom: 0
+}
+
+.highlight {
+  margin-bottom: 20px;
+}
+
+</style>

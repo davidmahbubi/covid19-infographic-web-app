@@ -1,7 +1,7 @@
 <template>
     <div id="highilight-stats">
-        <h5 style="display: inline">Data di {{ indonesianData ? 'Indonesia' : 'Seluruh Dunia' }}</h5>
-        <div class="switch" style="float: right;">
+        <h5 class="current-location-info">Data di {{ indonesianData ? 'Indonesia' : 'Seluruh Dunia' }}</h5>
+        <div class="switch">
             <label>
                 <input type="checkbox" v-model="indonesianData" checked>
                 <span class="lever"></span>
@@ -98,6 +98,14 @@ export default {
 
 .highlight-card-row {
     margin-top: 16px;
+}
+
+.switch {
+    float: right;
+}
+
+.current-location-info {
+    display: inline;
 }
 
 </style>

@@ -4,7 +4,7 @@
       <nav class="deep-orange darken-1">
         <div class="nav">
           <div class="container">
-            <router-link to="/" class="brand-logo" style="font-size: 20px">Covid-19 Info</router-link>
+            <router-link to="/" class="brand-logo">Covid-19 Info</router-link>
             <a href="#" data-target="on-mobile" class="sidenav-trigger">
               <i class="fas fa-bars"></i>
             </a>
@@ -37,6 +37,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  },
+};
+</script>
+
 <style>
   #app {
     font-family: 'Balsamiq Sans', cursive !important;
@@ -52,13 +61,8 @@
     opacity: 0;
   }
 
-</style>
+  .brand-logo {
+    font-size: 20px;
+  }
 
-<script>
-export default {
-  mounted() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  },
-};
-</script>
+</style>
