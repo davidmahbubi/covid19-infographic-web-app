@@ -4,7 +4,7 @@
       <highlight-stats class="highlight-stats"/>
       <statistic-per-country class="table-statistics-row" />
       <div class="fixed-action-btn">
-        <a href="" class="btn-floating btn-large waves-effect waves-light red fixed-action-btn">
+        <a href="https://github.com/davidmahbubi/covid19" class="btn-floating btn-large waves-effect waves-light red fixed-action-btn" target="blank">
           <i class="large material-icons">favorite</i>
         </a>
       </div>
